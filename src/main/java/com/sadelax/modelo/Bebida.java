@@ -34,6 +34,11 @@ public class Bebida {
 	@JoinColumn(name = "id_preparacion")
 	private Preparacion preparacion;
 	
+	private String tags;
+	
+	@Column(name = "included")
+	private boolean popular;
+	
 //	@OneToMany(mappedBy = "ingrediente")
 //	private Set<CantidadPorBebida> ingredientes;
 
@@ -93,6 +98,14 @@ public class Bebida {
 //	public void setIngredientes(Set<CantidadPorBebida> ingredientes) {
 //		this.ingredientes = ingredientes;
 //	}
+	
+	public String getTag() {
+		return tags;
+	}
+
+	public void setTag(String tags) {
+		this.tags = tags;
+	}
 
 	@Override
 	public int hashCode() {
