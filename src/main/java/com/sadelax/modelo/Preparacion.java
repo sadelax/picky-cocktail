@@ -13,23 +13,6 @@ import javax.persistence.Table;
 @Table(name = "preparaciones")
 public class Preparacion {
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(descripcion, idPreparacion);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Preparacion other = (Preparacion) obj;
-		return Objects.equals(descripcion, other.descripcion) && idPreparacion == other.idPreparacion;
-	}
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_preparacion")
@@ -51,5 +34,22 @@ public class Preparacion {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(descripcion, idPreparacion);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Preparacion other = (Preparacion) obj;
+		return Objects.equals(descripcion, other.descripcion) && idPreparacion == other.idPreparacion;
 	}
 }

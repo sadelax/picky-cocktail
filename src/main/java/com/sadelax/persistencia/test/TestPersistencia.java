@@ -1,4 +1,4 @@
-package com.sadelax.vista;
+package com.sadelax.persistencia.test;
 
 import java.util.List;
 import java.util.Scanner;
@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
 import com.sadelax.modelo.Bebida;
 import com.sadelax.persistencia.BebidaDao;
 
-//@Component
-public class ConsolaVista {
+@Component
+public class TestPersistencia {
 	
 	@Autowired
 	private BebidaDao bebidaDao;
@@ -23,6 +23,7 @@ public class ConsolaVista {
 		
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
+		int contador = 0;
 		int opcion;
 		do {
 			System.out.println("********** MENU PICKYCOCKTAIL **********");
@@ -45,7 +46,10 @@ public class ConsolaVista {
 				List<Bebida> todas = bebidaDao.findAll();
 				for (Bebida bebida : todas) {
 					System.out.println(bebida.toString());
+					contador++;
 				}
+				System.out.println("****************************************");
+				System.out.println("TOTAL ENCONTRADO: " + contador);
 				System.out.println("****************************************");
 				break;
 			case 2:
@@ -65,7 +69,10 @@ public class ConsolaVista {
 				List<Bebida> populares = bebidaDao.findByPopularity();
 				for (Bebida popular : populares) {
 					System.out.println(popular.toString());
+					contador++;
 				}
+				System.out.println("****************************************");
+				System.out.println("TOTAL ENCONTRADO: " + contador);
 				System.out.println("****************************************");
 				break;
 			case 4:
@@ -76,7 +83,10 @@ public class ConsolaVista {
 					System.out.println("********** BEBIDA ENCONTRADA **********");
 					for (Bebida byTag : bebidaTag) {
 						System.out.println(byTag.toString());
+						contador++;
 					}
+					System.out.println("****************************************");
+					System.out.println("TOTAL ENCONTRADO: " + contador);
 					System.out.println("****************************************");
 				} else {
 					System.out.println("No se encontró ninguna bebida con el tag especificado.");
@@ -90,7 +100,10 @@ public class ConsolaVista {
 					System.out.println("********** BEBIDA ENCONTRADA **********");
 					for (Bebida byIngrediente : ingredientes) {
 						System.out.println(byIngrediente.toString());
+						contador++;
 					}
+					System.out.println("****************************************");
+					System.out.println("TOTAL ENCONTRADO: " + contador);
 					System.out.println("****************************************");
 				} else {
 					System.out.println("No se encontró ninguna bebida con el ingrediente especificado.");
@@ -104,7 +117,10 @@ public class ConsolaVista {
 					System.out.println("********** BEBIDA ENCONTRADA **********");
 					for (Bebida byValue : encontradas) {
 						System.out.println(byValue.toString());
+						contador++;
 					}
+					System.out.println("****************************************");
+					System.out.println("TOTAL ENCONTRADO: " + contador);
 					System.out.println("****************************************");
 				} else {
 					System.out.println("No se encontró ninguna bebida con el ingrediente especificado.");
