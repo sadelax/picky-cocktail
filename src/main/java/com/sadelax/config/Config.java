@@ -12,7 +12,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
 @Configuration
-@ComponentScan({"com.sadelax.inicio", "com.sadelax.modelo", "com.sadelax.persistencia", "com.sadelax.vista"})
+@ComponentScan({"com.sadelax.inicio", "com.sadelax.modelo", "com.sadelax.persistencia"})
 @PropertySource("classpath:pickycocktail.properties")
 @Import({JPAConfig.class})
 public class Config {

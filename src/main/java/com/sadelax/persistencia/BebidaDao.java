@@ -6,16 +6,18 @@ import java.util.Set;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import com.sadelax.modelo.Bebida;
 
-public interface BebidaDao extends JpaRepository<Bebida, Integer> {
+@Repository
+public interface BebidaDao extends JpaRepository<Bebida, Integer>/*, BebidaDaoCustom */{
 
 	@Query("SELECT b FROM Bebida b WHERE b.tags LIKE %:tag%")
 	List<Bebida> findByTag(@Param("tag") String tag);
 	
 	@Query("SELECT b FROM Bebida b WHERE b.popular = 1")
-	List<Bebida> findByPopularity();
+	List<Bebida> findPopularDrinks();
 	
     @Query("SELECT b FROM Bebida b "
     		+ "JOIN CantidadPorBebida cpb ON b.idBebida = cpb.bebida.idBebida "

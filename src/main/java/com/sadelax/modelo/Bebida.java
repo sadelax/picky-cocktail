@@ -1,5 +1,6 @@
 package com.sadelax.modelo;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -101,12 +102,21 @@ public class Bebida {
 //		this.ingredientes = ingredientes;
 //	}
 	
-	public String getTag() {
+	public String getTags() {
 		return tags;
 	}
 
-	public void setTag(String tags) {
+	public void setTags(String tags) {
 		this.tags = tags;
+	}
+	
+	public boolean coincideConTags(List<String> tags) {
+		for (String tag : tags) {
+			if (this.tags.contains(tag)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	@Override
