@@ -1,12 +1,15 @@
 # Picky Cocktail
 
-Picky Cocktail es una aplicación en desarrollo escrita en Java que utiliza Spring Data y Spring MVC para su implementación. La aplicación se centra en la gestión de cócteles y utiliza una base de datos MySQL como backend.
+Picky Cocktail es una aplicación aún en desarrollo escrita en Java.
+La aplicación se centra en la gestión de cócteles, enfocada principalmente a los bartenders, pero pudiendo ser utilizada por el público general.
+
+Para la base de datos estoy usando la de /resources/picky_cocktail_db.sql, pero quiero integrar 
 
 ## Tareas Pendientes
 
 ### Capa de Persistencia
 - [ ] Implementar los métodos de persistencia restantes en la capa DAO.
-- [ ] Configurar correctamente la conexión a la base de datos MySQL.
+- [ ] Configurar correctamente la conexión a la base de datos MySQL con diferentes bases de datos.
 - [ ] Realizar pruebas de integración de la capa de persistencia.
 
 ### Capa de Negocio
@@ -28,6 +31,65 @@ Picky Cocktail sigue una arquitectura DAO (Data Access Object) y MVC (Model-View
 - La capa de persistencia utiliza Spring Data JPA (versión 2.7.0) para interactuar con la base de datos MySQL.
 - La capa de presentación está siendo migrada de una aplicación de escritorio Swing a un controlador en Spring MVC.
 - La capa de negocio se basa en los DAOs implementados y utiliza los servicios de Spring para la gestión de transacciones.
+
+La disposición de carpetas quedaría así:
+
+- src
+  - main
+    - java
+      - com
+        - pickycocktail
+          - usuarios
+            - application
+              - service
+                - UsuarioService.java
+            - dominio
+              - model
+                - Usuario.java
+            - infraestructura
+              - persistence
+                - repository
+                  - UsuarioRepository.java
+              - web
+                - controller
+                  - UsuarioController.java
+                - dto
+                  - UsuarioDTO.java
+          - bebidas
+            - application
+              - service
+                - BebidaService.java
+            - dominio
+              - model
+                - Bebida.java
+            - infraestructura
+              - persistence
+                - repository
+                  - BebidaRepository.java
+              - web
+                - controller
+                  - BebidaController.java
+                - dto
+                  - BebidaDTO.java
+          - Application.java
+    - resources
+      - static
+        - css
+          - estilos.css
+        - js
+          - scripts.js
+      - templates
+        - bebidas
+          - listar.html
+          - crear.html
+          - editar.html
+        - usuarios
+          - listar.html
+          - crear.html
+          - editar.html
+        - error.html
+
+
 
 ## Requisitos de Colaboración
 
