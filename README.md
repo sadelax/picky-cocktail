@@ -53,8 +53,6 @@ La disposición de carpetas quedaría así:
               - web
                 - controller
                   - UsuarioController.java
-                - dto
-                  - UsuarioDTO.java
           - bebidas
             - application
               - service
@@ -69,8 +67,6 @@ La disposición de carpetas quedaría así:
               - web
                 - controller
                   - BebidaController.java
-                - dto
-                  - BebidaDTO.java
           - Application.java
     - resources
       - static
@@ -88,6 +84,18 @@ La disposición de carpetas quedaría así:
           - crear.html
           - editar.html
         - error.html
+    - webapp
+      - WEB-INF
+        - views
+          - bebidas
+            - listar.jsp
+            - crear.jsp
+            - editar.jsp
+          - usuarios
+            - listar.jsp
+            - crear.jsp
+            - editar.jsp
+        - web.xml
 
 
 
