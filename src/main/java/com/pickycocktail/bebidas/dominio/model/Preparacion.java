@@ -1,4 +1,4 @@
-package com.pickycocktail.modelo;
+package com.pickycocktail.bebidas.dominio.model;
 
 import java.util.Objects;
 
@@ -10,25 +10,22 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "uso_ingrediente")
-public class UsoIngrediente {
-
+@Table(name = "preparaciones")
+public class Preparacion {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_uso")
-	private int idUso;
+	@Column(name = "id_preparacion")
+	private int idPreparacion;
 	
-	@Column(name = "nombre")
 	private String descripcion;
 
-	
-	public int getIdUso() {
-		return idUso;
+	public int getIdPreparacion() {
+		return idPreparacion;
 	}
 
-	public void setIdUso(int idUso) {
-		this.idUso = idUso;
+	public void setIdPreparacion(int idPreparacion) {
+		this.idPreparacion = idPreparacion;
 	}
 
 	public String getDescripcion() {
@@ -38,11 +35,12 @@ public class UsoIngrediente {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
+	
 	@Override
 	public int hashCode() {
-		return Objects.hash(descripcion, idUso);
+		return Objects.hash(descripcion, idPreparacion);
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -51,7 +49,7 @@ public class UsoIngrediente {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		UsoIngrediente other = (UsoIngrediente) obj;
-		return Objects.equals(descripcion, other.descripcion) && idUso == other.idUso;
+		Preparacion other = (Preparacion) obj;
+		return Objects.equals(descripcion, other.descripcion) && idPreparacion == other.idPreparacion;
 	}
 }

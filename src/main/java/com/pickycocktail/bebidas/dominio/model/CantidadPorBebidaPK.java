@@ -1,4 +1,4 @@
-package com.pickycocktail.modelo;
+package com.pickycocktail.bebidas.dominio.model;
 
 import java.io.Serializable;
 import java.util.Objects;

@@ -1,4 +1,4 @@
-package com.pickycocktail.config;
+package com.pickycocktail.bebidas.infraestructura.config;
 
 import java.util.HashMap;
 import java.util.Map;

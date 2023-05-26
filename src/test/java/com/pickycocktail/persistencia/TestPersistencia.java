@@ -1,4 +1,4 @@
-package com.pickycocktail.persistencia.test;
+package com.pickycocktail.persistencia;
 
 import java.util.List;
 import java.util.Scanner;
@@ -9,8 +9,8 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.pickycocktail.modelo.Bebida;
-import com.pickycocktail.persistencia.BebidaDao;
+import com.pickycocktail.bebidas.dominio.model.Bebida;
+import com.pickycocktail.bebidas.infraestructura.persistence.BebidaDao;
 
 @Component
 public class TestPersistencia {
