@@ -37,6 +37,7 @@ public class Usuario implements Serializable, Comparable<Usuario>{
 	private String ciudad;
 	private String municipio;
 	private String pais;
+	
 	@Enumerated
 	private Genero genero;
 	private int birthday;
@@ -44,11 +45,13 @@ public class Usuario implements Serializable, Comparable<Usuario>{
     private String foto;
     private String descripcion;
 	private Set<Usuario> amigos;
+	
 	@ManyToMany
 	@JoinTable(name = "usuario_bebida",
 				joinColumns = @JoinColumn(name = "id_usuario"),
 				inverseJoinColumns = @JoinColumn(name = "id_bebida"))
 	private Set<Bebida> favoritas;
+	
 	@OneToMany(mappedBy = "nombre")
 	private Set<Bebida> misBebidas;
 	
