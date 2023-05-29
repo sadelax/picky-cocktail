@@ -28,7 +28,7 @@ public class Usuario implements Serializable, Comparable<Usuario>{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	private String usuario;
 	private String email;
 	private String pwd;
@@ -55,11 +55,20 @@ public class Usuario implements Serializable, Comparable<Usuario>{
 	@OneToMany(mappedBy = "nombre")
 	private Set<Bebida> misBebidas;
 	
+	
+	public Usuario(String nombre, String usuario, String password, String email) {
+		this.nombre = nombre;
+		this.usuario = usuario;
+		this.pwd = password;
+		this.email = email;
+	}
+	
+	
 	public int getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
