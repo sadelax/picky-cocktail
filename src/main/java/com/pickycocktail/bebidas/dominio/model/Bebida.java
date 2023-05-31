@@ -53,6 +53,30 @@ public class Bebida {
 		this.idBebida = idBebida;
 	}
 
+	public String getTags() {
+		return tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+	}
+
+	public boolean isPopular() {
+		return popular;
+	}
+
+	public void setPopular(boolean popular) {
+		this.popular = popular;
+	}
+
+	public Set<CantidadPorBebida> getIngredientes() {
+		return ingredientes;
+	}
+
+	public void setIngredientes(Set<CantidadPorBebida> ingredientes) {
+		this.ingredientes = ingredientes;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
